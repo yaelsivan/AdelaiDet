@@ -1,4 +1,4 @@
 _BASE_: "../Base-BAText.yaml"
 DATASETS:
-  TRAIN: ("mltbezier_word_train", "totaltext_train", "syntext1_train", "syntext2_train",) 
-  TEST: ("totaltext_val",)
+  TRAIN: ("totaltext_train",) 
+  TEST: ("totaltext_train",)

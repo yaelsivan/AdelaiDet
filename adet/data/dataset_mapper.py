@@ -61,6 +61,7 @@ class DatasetMapperWithBasis(DatasetMapper):
         logger.info(
             "Rebuilding the augmentations. The previous augmentations will be overridden."
         )
+
         self.augmentation = build_augmentation(cfg, is_train)
 
         if cfg.INPUT.CROP.ENABLED and is_train:
@@ -75,6 +76,7 @@ class DatasetMapperWithBasis(DatasetMapper):
             logging.getLogger(__name__).info(
                 "Cropping used in training: " + str(self.augmentation[0])
             )
+
 
         # fmt: off
         self.basis_loss_on       = cfg.MODEL.BASIS_MODULE.LOSS_ON
@@ -129,6 +131,7 @@ class DatasetMapperWithBasis(DatasetMapper):
         aug_input = T.StandardAugInput(image, boxes=boxes, sem_seg=sem_seg_gt)
         transforms = aug_input.apply_augmentations(self.augmentation)
         image, sem_seg_gt = aug_input.image, aug_input.sem_seg
+
 
         image_shape = image.shape[:2]  # h, w
         # Pytorch's dataloader is efficient on torch.Tensor due to shared-memory,

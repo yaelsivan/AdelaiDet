@@ -99,9 +99,11 @@ if __name__ == "__main__":
                     out_filename = args.output
                 visualized_output.save(out_filename)
             else:
-                cv2.imshow(WINDOW_NAME, visualized_output.get_image()[:, :, ::-1])
-                if cv2.waitKey(0) == 27:
-                    break  # esc to quit
+                cv2.imwrite('result/img.png', visualized_output.get_image()[:, :, ::-1])
+
+                # cv2.imshow(WINDOW_NAME, visualized_output.get_image()[:, :, ::-1])
+                # if cv2.waitKey(0) == 27:
+                #     break  # esc to quit
     elif args.webcam:
         assert args.input is None, "Cannot have both --input and --webcam!"
         cam = cv2.VideoCapture(0)
