@@ -51,7 +51,8 @@ class Attention(nn.Module):
         super(Attention, self).__init__()
         self.hidden_size = in_channels
         self.output_size = cfg.MODEL.BATEXT.VOC_SIZE + 1
-        self.dropout_p = 0.1
+# changed from 0.1 to 0
+        self.dropout_p = 0
         self.max_len = cfg.MODEL.BATEXT.NUM_CHARS
 
         self.embedding = nn.Embedding(self.output_size, self.hidden_size)

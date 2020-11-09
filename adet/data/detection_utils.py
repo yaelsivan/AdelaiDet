@@ -92,8 +92,8 @@ def build_augmentation(cfg, is_train):
     augmentation = []
     augmentation.append(T.ResizeShortestEdge(min_size, max_size, sample_style))
     if is_train:
-        if cfg.INPUT.HFLIP_TRAIN:
-            augmentation.append(T.RandomFlip())
+      if cfg.INPUT.HFLIP_TRAIN:
+           augmentation.append(T.RandomFlip())
         logger.info("Augmentations used in training: " + str(augmentation))
     return augmentation
 
