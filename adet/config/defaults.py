@@ -8,8 +8,9 @@ from detectron2.config import CfgNode as CN
 _C.MODEL.MOBILENET = False
 _C.MODEL.BACKBONE.ANTI_ALIAS = False
 _C.MODEL.RESNETS.DEFORM_INTERVAL = 1
-_C.INPUT.HFLIP_TRAIN = True
-_C.INPUT.CROP.CROP_INSTANCE = True
+#turned grom true to false
+_C.INPUT.HFLIP_TRAIN = False 
+_C.INPUT.CROP.CROP_INSTANCE = False 
 
 # ---------------------------------------------------------------------------- #
 # FCOS Head
